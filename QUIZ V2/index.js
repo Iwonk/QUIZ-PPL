@@ -11,10 +11,10 @@ async function login() {
     await driver.findElement(By.id("login_pass")).sendKeys("admin");
     await driver.findElement(By.id("login_button")).click();
 
-    await driver.sleep(10000);
+    await driver.sleep(8000);
     await driver.findElement(By.className("default-avatar")).click();
   
-    const testcase = await driver.findElement(By.xpath('/h3')).getText();
+    const testcase = await driver.findElement(By.xpath("/html/body/div[7]/div/div[3]/div/form/div[2]/div/div/div[2]/div/div[1]/div[1]/h3")).getText();
     assert.equal(testcase, "Administrator", "Test Failed");
     console.log("Test Success");
       
